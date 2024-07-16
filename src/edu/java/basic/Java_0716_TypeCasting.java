@@ -11,10 +11,14 @@ public class Java_0716_TypeCasting {
 
         int oneMil = 1000000;
         int twoMil = 2000000;
+        int lalal = 1000000;
+        long roror = 2000000;
 
+        long oneLong = lalal * roror;
         long oneMilLong = (long)1000000 * 2000000;
 
         System.out.println(oneMilLong);
+        System.out.println(oneLong);
 
         System.out.println(one);
         System.out.println(two);
