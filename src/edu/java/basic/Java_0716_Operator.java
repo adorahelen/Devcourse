@@ -12,15 +12,23 @@ public class Java_0716_Operator {
         // 조건 연산자 (삼항)
         // 대입 연산자
 
-        System.out.println("buho ------------");
-        int buho = 3;
-        System.out.println(buho);
+//        System.out.println("buho ------------");
+//        int buho = 3;
+//        System.out.println(buho);
+//
+//
+//        System.out.println("buho operator ------------");
+//        int divide = 7 + 6 - 5 * 4 /3;
+//        int modulo = 7 + 6 -5 * 4 % 3;
+//        System.out.println(divide);
+//        System.out.println(modulo);
+
+        int sec = 3695;
+        int min = sec / 60;
+        int time = min / 60;
+        int realsec = sec % 60;
+        System.out.println(sec + "초는 "  + time + " 시간 " + min + "분 " + realsec);
 
 
-        System.out.println("buho operator ------------");
-        int divide = 7 + 6 - 5 * 4 /3;
-        int modulo = 7 + 6 -5 * 4 % 3;
-        System.out.println(divide);
-        System.out.println(modulo);
     }
 }
