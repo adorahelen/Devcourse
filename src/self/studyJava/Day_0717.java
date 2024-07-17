@@ -49,13 +49,32 @@ public class Day_0717 {
 //
 
         // for each 문이라고 하는데, 파이썬 x in 리스트 랑 같은 문법
-        int [] n  = {1, 2, 3, 4, 5};
-        int m[] = {6,7,8,9,10};
-        int sum = 0;
-        for (int i : n) {
-            sum += i;
-        }
-        System.out.println(sum);
+//        int [] n  = {1, 2, 3, 4, 5};
+//        int m[] = {6,7,8,9,10};
+//        int sum = 0;
+//        for (int i : n) {
+//            sum += i;
+//        }
+//        System.out.println(sum);
+//
+//        for (int i = 1; i < 11; i++) {
+//            if (i % 2 == 0) {
+//
+//            }
+//            else continue;
+//        }
+//        int count = 0;
+//        char i = 65;
+//        for (; i < 91; i++) {
+//
+//            if (count == 5 || count == 10 || count == 15 || count == 20) {
+//                System.out.println();
+//            }
+//            count += 1;
+//            System.out.print(i + " ");
+//
+//        }
+
 
 
 
