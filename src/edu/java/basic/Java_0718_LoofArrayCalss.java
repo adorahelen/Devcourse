@@ -1,0 +1,154 @@
+//////package edu.java.basic;
+//////
+//////import java.util.ArrayList;
+//////import java.util.Scanner;
+//////
+//////public class Java_0718_LoofArrayCalss {
+//////    public static void main(String[] args) {
+////////        System.out.println();
+////////
+////////        // 향상된 스위치 문
+////////        Scanner sc = new Scanner(System.in);
+////////        int month = sc.nextInt();
+////////        int lastday = 0;
+////////        switch (month) {
+////////            case 1 -> lastday = 30;
+////////            case 2 , 3 ,4 , 5 -> lastday = 60;
+////////            default -> System.out.println("잘못된 월입니다.");
+////////        }
+//////        // 동적할당 배열
+//////        ArrayList<Integer> numbers = new ArrayList<>();
+//////        numbers.add(10);
+//////        numbers.add(20);
+//////        numbers.add(30);
+//////        System.out.println("ArrayList: " + numbers);
+//////
+//////
+//////        // 1차원 배열의 선언
+//////        int[] scores;
+//////        char grades[];
+//////
+//////        // 선언된 배열의 생성 : - 크기를 지정 -  기본 값으로 자동 초기화
+//////        scores = new int[3]; // 길이가 3인 정수 배열 0, 0, 0
+//////        grades = new char[3]; // 길이가 3인 문자 배
+//////
+//////        scores[0] = 99;
+//////        scores[1] = 88;
+//////        scores[2] = 90;
+//////
+//////        System.out.println(scores.length);
+//////        System.out.println(scores[0]);
+//////        System.out.println(scores[1]);
+//////        System.out.println(scores[2]);
+//////        System.out.println(grades.length);
+//////        System.out.println(grades[0]);
+//////
+//////
+//////        boolean[] pass = new boolean[3];
+//////        System.out.println(pass[0]);
+//////
+//////        double[] incentive = new double[] {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
+//////        double[] average = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
+//////        String[] Users = {"kim" , "Kang", "Min"};
+//////        System.out.println(incentive.length);
+//////        System.out.println(Users.length);
+//////
+//////        // 불가능 Users = {"hoo", "Moo", "soo"};
+//////        Users = new String[]  {"GH"};
+//////        System.out.println(Users.length);
+//////        System.out.println(Users[0]);
+//////
+//////        for(int i = 0; i < Users.length; i++){
+//////            System.out.println(Users[i]);
+//////        }
+//////
+//////        for (String User : Users) {
+//////            System.out.println(Users);
+//////        }
+//////    }
+//////}
+//////
+////
+////package edu.java.basic;
+////public class Java_0718_LoofArrayCalss {
+////    public static void main(String[] args) {
+////        String [] name = {"kim", "Lee", "Hann", "Ann", "Ben"};
+////        int [] score = {99, 88, 77, 66, 55};
+////        int sum = 0;
+////        for (int i = 0; i < score.length; i++) {
+////
+////            sum += score[i];
+////        }
+////        for (int i = 0; i < name.length; i++) {
+////            System.out.println((i + 1)+ "\t"+ name[i] + ": " + score[i]);
+////        }
+////        float avg = (float)sum / score.length;
+////        System.out.println(sum);
+////        System.out.println(avg);
+////
+////
+////
+////    }
+////}
+//package edu.java.basic;
+//public class Java_0718_LoofArrayCalss {
+//    public static void main(String[] args) {
+//        // 2차원 배열 선언
+//        int [][] score;
+//        char grades [][];
+//
+//        score = new int [2][3]; // 6개 윗층 3개 + 아래층 3개
+//        grades = new char [2][];
+//
+//        score[0][0] = 99;
+//        score[1][0] = 98;
+//        score[0][1] = 99;
+//        score[1][1] = 98;
+//        score[0][2] = 99;
+//        score[1][2] = 98;
+////        grades[0] = new char [] {'A','B','C','D','E','F', '9'};
+////        grades[1] = new char [] {'A','B','C','D','E','F'};
+//
+//
+//        grades[0] = new char[2];
+//        grades[1] = new char[4];
+//
+//        grades[0][0] = 'H';
+//        grades[0][1] = 'i';
+//
+//        grades[1][0] = 'J';
+//        grades[1][1] = 'A';
+//        grades[0][0] = 'V';
+//        grades[0][1] = 'A';
+//
+//        boolean [][] pass = new boolean[3][2];
+//        double [][] incentive
+//                = new double [][] {{ 0.1, 0.2, 0.3},
+//                                    { 0.4, 0.5, 0.6},};
+//
+//        String [][] users = {{"d", "d", "dddd", "ddd"},{"d"}};
+////
+////        ldevers = new String [][] { {"a"}, {"s"} };
+//
+//        String levels[][] = new String [][] {{},{}};
+//        System.out.println("user   -foreach");
+//
+//
+//        for (int i = 0; i < users.length; i++) {
+//            for(int j = 0; j < users[i].length; j++) {
+//                System.out.println(users[i][j]);
+//            }
+//
+//        }
+//
+//        System.out.println();
+//
+//
+//        for (String[] user : users) {
+//            for (String u : user) {
+//                System.out.println(u);
+//            }
+//
+//        }
+//    }
+//}
