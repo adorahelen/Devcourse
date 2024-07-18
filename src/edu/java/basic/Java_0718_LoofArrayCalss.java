@@ -152,3 +152,77 @@
 //        }
 //    }
 //}
+
+package edu.java.basic;
+public class Java_0718_LoofArrayCalss {
+    public static void main(String[] args) {
+
+
+        int score[][] = new int [3][5];
+        score[0][0] = 100;
+        score[0][1] = 95;
+        score[0][2] = 98;
+        score[1][0] = 27;
+        score[1][1] = 48;
+        score[1][2] = 22;
+        score[2][0] = 69;
+        score[2][1] = 77;
+        score[2][2] = 80;
+        int koreasum = 0;
+        int english = 0;
+        int math = 0;
+        int all1 = 0;
+        int all2 = 0;
+        int all3 = 0;
+
+        for(int i = 0; i < score.length; i++) {
+            koreasum += score[i][0];
+            english += score[i][1];
+            math += score[i][2];
+
+            all1 = score[0][0] + score[0][1] + score[0][2];
+            all2 = score[1][0] + score[1][1] + score[1][2];
+            all3 = score[2][0] + score[2][1] + score[2][2];
+
+            score[0][3] = all1;
+            score[1][3] = all2;
+            score[2][3] = all3;
+
+            // 4행에 나누기 해서 넣으면 끝
+            score[0][4] = all1 /3;
+            score[1][4] = all2 /3;
+            score[2][4] = all3 /3;
+
+
+            System.out.println(score[i][0] + " " + score[i][1] + " " + score[i][2] + " " + score[i][3] + " " + score[i][4]);
+
+        }
+        System.out.println(koreasum+ " " + english+  " " + math );
+        float koreasum2 = (float) koreasum / 3;
+        float english2 = (float) english / 3;
+        float math2 = (float) math / 3;
+        System.out.println(koreasum2 + " " + english2 + " " + math2);
+    }
+}
+
+
+//int i = 5;
+//int [] ii = { 1, 2};
+//int [][] scores = {{100, 95, 98}, {27,48,22}, {69, 77, 80}};
+//String [] subject = {"번호", "국어", "영어", "수학", "총점", "평균"};
+//
+//// 출력 레이블 표시
+//for ( String l : subject) {
+//    System.out.println( l + "\t");
+//}
+//
+//sout.println();
+//sout.println("----------------------");
+//for (int i = 0; i < scores.length; i ++) {
+//    sout print ( i + 1) +  "번\t" );
+//
+//    for (int j = 0; j < scores [i]. length; j ++ )
+//        sout (sc)
+//
+//    sout.println();
+//        }
