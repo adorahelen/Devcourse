@@ -5,10 +5,10 @@ public class Car {
     // + # ~ - 는 접근 제한자
     // 속성 상태 property, field
 
-    public     String    Color = "Red";
-    protected  boolean   SunRoof = true;
-               int       price = 2000;
-    private    String    maker = "Hyundai";
+    public     String    Color;
+    protected  boolean   SunRoof;
+               int       price;
+    private    String    maker;
     //접근제한자  자료형      이름       할당값
 
 
@@ -35,7 +35,7 @@ public class Car {
         System.out.println("Car driving");
     }
 
-
+// final 붙으면 상속ㄷ도 안되고 오버라이드도 안된다
     public String toString() {
         return "Car 객체 : 색상- " + Color +
                 " 썬루프 -" + SunRoof +

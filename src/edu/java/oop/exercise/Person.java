@@ -15,6 +15,8 @@ public class Person {
         this.name = name;
         this.tell = tell;
     }
+
+    Person(String name){}
     // 겟터 셋터 써야 했음
 
 // command + N
