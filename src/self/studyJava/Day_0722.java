@@ -196,8 +196,28 @@ public class Day_0722 {
 
     /*
     * 인터페이스 시작
+    * 사전적인 의미로 두 장치를 연결하는 접속기를 말한다.
+    * 여기서 두 장치를 서로 다른 객체로 본다면, 인터페이스는 이 두 객체를 연결하는 역할을 한다.
+    *
+    * 인터페이스는 다형성 구현에 주된 기술로 이용된다.
+    * => 객체 A와 객체 B가 존재한다. 두 객체가 직접적으로 연결되어 있으면 하나가 바뀔떄마다 하나를 수정해야 한다.
+    * 따라서 객체 들 사이에 인터페이스를 설정하고 그 사이를 연결하는 접속기로 사용한다.
     * */
+    interface  WannaGoSleep {}
+    public interface WannaGoSleep2 {
+        String bed = null; // 맞다 인터페이스는 자동 초기화가 없어서 널값 넣어줘야 함
+        default void sleep() {}
+        private void drink() {}
+    }
+    public class Shower implements WannaGoSleep, WannaGoSleep2 {
+        @Override
+        public void sleep() {
+            System.out.println("진짜 너무 피곤한데 샤워하고 자러갑시다");
+        }// 매인 메소드에서 얘를 호출하면 implements 뒤에 있는 애들을 거쳐서 구현한 Showers 객체를 호출한다
+        // 특징 하나더 위에 본거처럼 그 상속은   extends  뒤에 하나만 상속 가능한데 얘는 여러개 가능함
+    }
 
+    // 내일 할일 인터페이스 재 정립, 클래스 내부의 클래스 이너 클래스 공부, 코드 리뷰
 
 
 
