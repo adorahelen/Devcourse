@@ -57,9 +57,17 @@ public class InnerClassMain {
         new Interface1(){
             @Override
             public void method() {
+                // 안 붙이면 디폴트인데 그러면 퍼블릭에서 좁아지니까 문제가 되서 퍼블릭을 쳐야 했다는거고
+                // abstract의 경우에는 디폴트가 퍼블릭이라서 문제가 없었다.
                 System.out.println("인터페이스를 ");
             }
         };
+        // 람다식 적용
+        Interface1 interLamda = () -> {
+            System.out.println("인터페이스를 람다식으로 만들어보자");
+        };
+        interLamda.method();
+
 
         Outer outer = new Outer();
 
