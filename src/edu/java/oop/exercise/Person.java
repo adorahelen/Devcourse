@@ -9,36 +9,36 @@ public class Person {
     public Person() {}
 
     private String name;
-    private String tell;
+    private String tel;
 
-    Person(String name, String number) {
+    Person(String name, String tel) {
         this.name = name;
-        this.tell = tell;
+        this.tel = tel;
     }
-
-    Person(String name){}
     // 겟터 셋터 써야 했음
+
 
 // command + N
     public String getName() {
         return name;
     }
     public String getTel() {
-        return tell;
+        return tel;
     }
 
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
     public void setName(String name) {
         this.name = name;
-    }
-    public void setTel(String tel) {
-        this.tell = tel;
+
     }
 
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", tel='" + tell + '\'' +
+                ", tel='" + tel + '\'' +
                 '}';
     }
 }

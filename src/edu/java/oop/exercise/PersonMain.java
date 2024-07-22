@@ -18,10 +18,10 @@ public class PersonMain {
     //            전화번호 :
 
     public static void main(String[] args) {
-//        Person person = new Person("나루토", "010-1234-5678");
+//        Person person1 = new Person("나루토", "010-1234-5678");
 //        Person person2 = new Person("사스케", "010-1234-5678");
 //
-        Person person1 = new Person(args[0], args[1]);
+        Person person1 = new Person();
 
 //        Person person2 = new Person(args[1], args[2]);
 
