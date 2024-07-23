@@ -5,6 +5,9 @@ public class StringMain {
     static String emptyStr = "";
 
     public static void main(String[] args) {
+        String strlll = "Hello" + "HI" + "Bye";
+
+
         System.out.println("nullStr: " + nullStr);
         System.out.println("emptyStr: " + emptyStr);
 
