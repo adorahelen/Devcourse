@@ -1,0 +1,3 @@
+'Lee', '1111', 'lee@lee.com', 990212
+'Kim', '2222', 'kim@kim.com', 002132
+'soo', '3333', 'asm@kgm.com', 291939
