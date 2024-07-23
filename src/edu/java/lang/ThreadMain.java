@@ -38,15 +38,8 @@ package edu.java.lang;
 // 1. Thread 클래스를 상속받는 ThreadExtends 클래스
 class ThreadExtends extends Thread {
     // 1.1 기본 생성자
-    public ThreadExtends() {
-        super();
-    }
-
-    // 1.2 문자열을 매개변수로 받는 생성자
-    public ThreadExtends(String name) {
-        super(name);
-    }
-
+    public ThreadExtends() {}
+    public ThreadExtends(String name) { super(name); }
     // 1.3 run 메서드를 오버라이딩하여 스레드의 이름과 1 ~ 3을 출력
     @Override
     public void run() {
@@ -55,16 +48,18 @@ class ThreadExtends extends Thread {
         }
     }
 
-    public static void main(String[] args) {
-        // 기본 생성자를 사용한 스레드 생성 및 시작
-        ThreadExtends thread1 = new ThreadExtends();
-        thread1.setName("Thread1");
-        thread1.start();
 
-        // 문자열을 매개변수로 받는 생성자를 사용한 스레드 생성 및 시작
-        ThreadExtends thread2 = new ThreadExtends("Thread2");
-        thread2.start();
-    }
+
+//    public static void main(String[] args) {
+//        // 기본 생성자를 사용한 스레드 생성 및 시작
+//        ThreadExtends thread1 = new ThreadExtends();
+//        thread1.setName("Thread1");
+//        thread1.start();
+//
+//        // 문자열을 매개변수로 받는 생성자를 사용한 스레드 생성 및 시작
+//        ThreadExtends thread2 = new ThreadExtends("Thread2");
+//        thread2.start();
+//    }
 }
 
 // 2. Runnable 인터페이스를 구현하는 ThreadImpl 클래스
@@ -79,13 +74,32 @@ class ThreadImpl implements Runnable {
     }
 
     public static void main(String[] args) {
-        // Runnable 구현체를 사용한 스레드 생성 및 시작
-        ThreadImpl runnable = new ThreadImpl();
-        Thread thread1 = new Thread(runnable, "RunnableThread1");
-        thread1.start();
+        ThreadExtends t1 = new ThreadExtends();
+        t1.setName("김강민");
+        ThreadExtends t2 = new ThreadExtends("김강민2");
+        ThreadImpl t3 = new ThreadImpl();
 
-        // 다른 스레드 생성 및 시작
-        Thread thread2 = new Thread(runnable, "RunnableThread2");
-        thread2.start();
+        Runnable r = new ThreadImpl();
+        Thread t4 = new Thread(r);
+        t4.setName("홍민지");
+        t4.start();
+        // 스레드 시작 시키기
+        t1.start();
+        t2.start();
+
+
+
+        System.out.println("---main () begin ---");
+        System.out.println( "실행 중인 쓰레드 이름 : " + t1.getName());
+        System.out.println("---main () end ---");
+
+//        // Runnable 구현체를 사용한 스레드 생성 및 시작
+//        ThreadImpl runnable = new ThreadImpl();
+//        Thread thread1 = new Thread(runnable, "RunnableThread1");
+//        thread1.start();
+//
+//        // 다른 스레드 생성 및 시작
+//        Thread thread2 = new Thread(runnable, "RunnableThread2");
+//        thread2.start();
     }
 }
