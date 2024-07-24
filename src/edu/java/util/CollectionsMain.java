@@ -28,5 +28,14 @@ public class CollectionsMain {
 
         Collections.sort(list, (o1, o2) -> o1.compareToIgnoreCase(o2));
         System.out.println(list);
+        System.out.println();
+
+        // 람다식으로 컴패래이터 인터페이스를 구현하여 +
+        // + 대소문자를 무시하고 내림차순으로 정렬하도록 정렬 기준 재정의
+        Collections.sort(list, Collections.reverseOrder(
+                (o1, o2) -> o1.compareToIgnoreCase(o2)
+        ));
+        System.out.println(list);
+        System.out.println();
     }
 }
