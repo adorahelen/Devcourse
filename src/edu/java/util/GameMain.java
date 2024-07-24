@@ -17,6 +17,15 @@ public class GameMain {
         System.out.println("    3. 종료 ");
         System.out.println("--------------------------------------");
         System.out.print(">> 선택 : ");
+
+        switch (scan.nextInt()) {
+            case 1: break;
+            case 2: break;
+            case 3: break;
+            default:
+                System.out.println("1 부터 3 중에 하나를 선택해주세요");
+        }
+
     }
 
     public void gawibawibo(){
