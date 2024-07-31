@@ -1,0 +1,75 @@
+-- 2. 출생연도를 입력받아 나이를 반환하는 함수를 완성 하시오
+
+DELIMITER $$
+Create Function get_age(num1 INT, num2 INT)
+    RETURNS INT -- 반환 타입
+Begin
+    RETURN num1 + num2 ;  -- 덧셈 연산 하여 반환
+ END $$
+ DELIMITER ;
+ SELECT plus(1, 2);
+
+ ##############################
+
+ DELIMITER $$
+ Create Function TuRUTuRu ( x, y)  -- 현재년도 , 출생년도
+    Returns int
+  BEGIN
+    RETURN x - y ;
+  END &&
+  DELIMITER ;
+  SELECT TuRuTuRu(2024, 1999);
+
+  #############################
+
+  DELIMITER &&
+  Create function get_age_answer (birth_year INT)
+    RETURNS INT -- 반환 타입
+   BEGINS
+        RETURN YEAR ( CURDATE() ) - birth_year; -- 덧셈 연산
+   END $$
+   DELIMITER ;
+  SELECT get_age_answer(1999);
+
+  ####
+  커서 , 트리거 하고 끝
+  ####
+
+  -- Cursor == mouse cursor
+  DROP FUNCTION 이전에 생성한 함수
+
+  -- emp 샐러리 관련 평균
+  DELIMITER $$
+  Create PROCEDURE cursor_proc()
+  BEGIN
+        DECLARE salary INT; --급여
+        DECLARE sal_sum INT DEFAULT 0; -- 총 급여
+        DECLARE read_cnt INT DEFAULT 0; -- 읽은 행 수
+        DECLARE end_of_row BOOLEAN DEFAULT FALSE; -- 막행유무
+
+        DECLARE csr CURSOR FOR -- 커서 선언
+            SELECT sal FROM emp; -- 급여 가져오기
+
+        DECLARE CONTINUE HANDLER FOR -- 반복조건
+            NOT FOUND SET end_of_row = TRUE;
+            -- 더이상 읽을 것이 없는 경우 마지막 행 트루 설정
+
+       OPEN csr; -- 커서열기
+            LOOP
+                FETCH csr INTO salary; --커서에서 데이터 가져오기
+
+               -- 마지막 행이면
+               -- 반복 종료
+            IF end_of_row THEN
+                LEAVE csr_loop;
+            END IF;
+
+               -- 급여 누적 시키고
+               -- 읽은 행 수 하나를 증가 시킴
+            END LOOP;
+            SELECT sal_sum / read_cnt AS 'AVERAGE SAL' ;
+       CLOSE csr; -- 커서 닫기
+
+
+  END $$
+  DELIMITER ;
