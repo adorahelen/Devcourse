@@ -15,7 +15,7 @@ public class DBCon {
         if( con == null ) {
             String url = "jdbc:mysql://localhost:3306/modeldb"; //mysql 접속 정보 및 스키마 선택
             String username = "root";   //mysql 접속 계정
-            String password = "1111";   //      "      의 비밀번호
+            String password = "12345678";   //      "      의 비밀번호
 
             try {
                 con = DriverManager.getConnection(url, username, password);

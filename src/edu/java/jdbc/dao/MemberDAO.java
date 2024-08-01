@@ -18,7 +18,7 @@ public class MemberDAO {
     // 기본생성자에서
     // DBcon 의 Connection 객체를 반환하는 메서드를 이용하여 con 객체 받아오기
     // 객체를 반환하는 메서드를 이용해서 객체 초기화
-    public MemberDAO(Connection con) {
+    public MemberDAO() {
         this.con = DBCon.getConnection();
     }
 
@@ -58,13 +58,14 @@ public class MemberDAO {
 
     public boolean update(MemberVO mvo) {    //t_member 테이블의 회원아이디가 bbb인 레코드 변경 ----
         //이메일 : bbb@bbb.com, 사진 : b.pn
-        String query = " UPDATE t_member SET email = '?', photo = '?', WHERE mid = '?' ";
+        String query = " UPDATE t_member SET email = ?, photo = ?,mpw = ? WHERE mid = ? ";
 
         try {
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, mvo.getEmail());
             pstmt.setString(2, mvo.getPhoto());
-            pstmt.setString(3, mvo.getMid());
+            pstmt.setString(3, mvo.getMpw());
+            pstmt.setString(4, mvo.getMid());
 
 
             int result = pstmt.executeUpdate(); // DML 쿼리 실행 결과 행 수 저장
@@ -120,6 +121,7 @@ public class MemberDAO {
                 mvo = new MemberVO(); // 객체를 생성하여 읽어온 값들을 각 필드에 저장 시킨다.
                 mvo.setMid(rs.getString("mid"));
                 mvo.setMname(rs.getString("mname"));
+                mvo.setMpw(rs.getString("mpw"));
                 mvo.setEmail(rs.getString("email"));
                 mvo.setGender(rs.getString("gender"));
                 mvo.setPhoto(rs.getString("photo"));
