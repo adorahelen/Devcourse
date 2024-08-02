@@ -126,7 +126,7 @@ public class MemberDAO {
                 mvo.setGender(rs.getString("gender"));
                 mvo.setPhoto(rs.getString("photo"));
                 mvo.setBirthDate(rs.getString("birthDate"));
-                mvo.setGender(rs.getString("Join_data"));
+                mvo.setGender(rs.getString("JoinData"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

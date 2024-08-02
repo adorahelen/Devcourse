@@ -80,6 +80,7 @@ public class JDBCTest {
                 System.out.println("birth_date : " + rs.getString("birth_date"));
                 System.out.println("join date : " + rs.getString("join_date"));
             } else {
+                System.out.println(" NO ID ");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

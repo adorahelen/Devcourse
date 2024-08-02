@@ -6,6 +6,7 @@ import edu.java.jdbc.util.DBCon;
 import edu.java.jdbc.vo.MemberVO;
 
 import java.sql.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class MemberMain {
@@ -17,10 +18,10 @@ public class MemberMain {
                 System.out.println("\n----------------------------------------");
                 System.out.println(" ㅁ MEMBER only SYSTEM ㅁㅁㅁㅁㅁ MAIN MENU");
                 System.out.println("----------------------------------------");
-                System.out.println("1. 가입    2. 회원정보수정    3. 시스템 종료");
+                System.out.println("1. 가입    2. 회원정보수정  3. 회원 탈퇴  4. 시스템 종료  5. 회원 정보 조회  6. 회원 목록 조회"); // 추가
                 System.out.println("> 선택 : ");
 
-                switch (scan.nextLine()) {
+                switch (scan.nextLine()) { // 추가
                     case "1":
                         join();
                         break;
@@ -29,10 +30,25 @@ public class MemberMain {
                             modify();
                             break;
 
-                    case "3":
-                        System.out.println("> 시스템을 종료합니다.");
-                        DBCon.close();
-                        System.exit(0);
+                   case "3":
+                            remove();
+                            break;
+
+                   case "4":
+                       System.out.println("> 시스템을 종료합니다.");
+                       scan.close();
+                       DBCon.close();
+                       System.exit(0);
+
+                    case "5":
+                            view();
+                            break;
+
+
+                   case "6":
+                            list();
+                             break;
+
                     default:
                         System.out.println("> 1 ~ 2 를 선택해 주세요. ");
                 }
@@ -103,10 +119,54 @@ public class MemberMain {
 
 
     public void remove(){
+        System.out.println("----------------------------------------");
+        System.out.println(" ㅁ MEMBER only SYSTEM ㅁㅁㅁㅁㅁ DELETE");
+        System.out.println("----------------------------------------");
+        System.out.println("아이디   : ");
+        String mid = scan.nextLine(); // what you Delete Record ID
 
+        if (mdao.delete(mid)) {
+            System.out.println(" Remove is ok");
+        } else {
+            System.out.println(" Remove FAIL");
+            System.out.println(" Retry ...");
+        }
     }
-    public void view(){}
+    public void view() {
+        System.out.println("----------------------------------------");
+        System.out.println(" ㅁ MEMBER only SYSTEM ㅁㅁㅁㅁㅁ view ");
+        System.out.println("----------------------------------------");
+        System.out.println(" ID  : ");
+        String mid = scan.nextLine();
+        MemberVO mvo = mdao.select(mid);
+        if (mvo != null) {
+            System.out.println("----화원 정보----");
+            System.out.println("회원 아이디 : " + mvo.getMid());
+            System.out.println("회원 이름 : " + mvo.getMname());
+            System.out.println(" email : " + mvo.getEmail());
+            System.out.println("gender : " + mvo.getGender());
+            System.out.println("pothose :" + mvo.getPhoto());
+            System.out.println("birth_date : " + mvo.getBirthDate());
+            System.out.println("join date : " + mvo.getJoin_date());
+        } else {
+            System.out.println(" NO ID ");
+        }
+    }
     public void list(){
+        System.out.println("----------------------------------------");
+        System.out.println(" ㅁ MEMBER only SYSTEM ㅁㅁㅁㅁㅁ LIST ALL ");
+        System.out.println("----------------------------------------");
+        System.out.println(" 아이디 | 이름 | 이메일 | 가입일자 ");
+        List<MemberVO> listlist = mdao.selectAll();
+
+        //use for each :
+        for (MemberVO mvo : listlist) {
+            System.out.println(mvo.getMid() + "|" + mvo.getMname() + "|" + mvo.getEmail() + "|" + mvo.getJoin_date());
+        }
+
+
+        System.out.println();
+        listlist.forEach(mvo -> System.out.println(mvo.getMid() + "|" + mvo.getMname() + "|" + mvo.getEmail() + "|" + mvo.getJoin_date()));
 
     }
 

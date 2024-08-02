@@ -63,12 +63,12 @@ public class MemberVO {
         this.birthDate = birthDate;
     }
 
-    public Date getJoinDate() {
-        return joinDate;
+    public Date getJoin_date() {
+        return join_date;
     }
 
-    public void setJoinDate(Date joinDate) {
-        this.joinDate = joinDate;
+    public void setJoin_date(Date join_date) {
+        this.join_date = join_date;
     }
 
     private String mid;
@@ -78,7 +78,7 @@ public class MemberVO {
     private String gender;
     private String photo;
     public String birthDate;
-    public Date joinDate;
+    public Date join_date;
 
     // mid VarChar(20) PK
     // mname varchar(20)
