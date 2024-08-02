@@ -111,7 +111,7 @@ public class BordDAO {
 
     }
     public BordVO select(int bno) {   //매개변수로 넘겨받은 회원아이디의 레코드 조회 ----
-        String query = " SELECT * FROM t_member WHERE bno = ? ";
+        String query = " SELECT * FROM t_board WHERE bno = ? ";
         BordVO vo = null;
 
         try {
