@@ -5,6 +5,8 @@ import edu.java.jdbc.util.DBCon;
 import edu.java.jdbc.vo.BordVO;
 import edu.java.jdbc.vo.MemberVO;
 
+
+import java.util.List;
 import java.util.Scanner;
 
 public class BordMain {
@@ -141,7 +143,23 @@ public class BordMain {
             voda.updateHit(bno);
         }
     }
-    public void SearchAll() {}
+    public void SearchAll() {
+
+        System.out.println("----------------------------------------");
+        System.out.println(" ㅁ BORAD SYSTEM ㅁㅁㅁㅁㅁ SEARCH ALL ");
+        System.out.println("----------------------------------------");
+        List<BordVO> listlist = voda.selectAll();
+
+        //use for each :
+        for (BordVO vo : listlist) {
+            System.out.println(vo.getTitle() + "\t" + vo.getContent() + "\t" + vo.getWriter() + "\t" + vo.getWriteDate() + "\t" + vo.getHit() + "\t" + vo.getBno());
+        }
+
+
+      //  System.out.println();
+        // listlist.forEach(mvo -> System.out.println(mvo.getMid() + "|" + mvo.getMname() + "|" + mvo.getEmail() + "|" + mvo.getJoin_date()));
+
+    }
 
 
     public static void main(String[] args) {
