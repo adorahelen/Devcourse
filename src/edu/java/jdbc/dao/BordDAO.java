@@ -114,6 +114,7 @@ public class BordDAO {
         String query = " SELECT * FROM t_board WHERE bno = ? ";
         BordVO vo = null;
 
+
         try {
             pstmt = con.prepareStatement(query);
             pstmt.setInt(1, bno);         //쿼리의 물음표에 해당하는 값 바인딩
@@ -127,7 +128,6 @@ public class BordDAO {
                 vo.setWriter(rs.getString("writer"));
                 vo.setHit(rs.getInt("hit"));
                 vo.setWriteDate(rs.getDate("write_date"));
-
             }
         } catch (SQLException e) {
             //           throw new RuntimeException(e);

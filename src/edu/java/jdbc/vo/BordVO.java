@@ -15,6 +15,12 @@ public Date writeDate;
 private String writer;
 
 
+// 댓글 기능 추가, another Class file
+
+
+
+
+
     public String getContent() {
         return content;
     }
